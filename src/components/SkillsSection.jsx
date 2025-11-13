@@ -2,36 +2,38 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
-  // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  // Programming Languages
+  { name: "Java", level: 90, category: "Programming Languages" },
+  { name: "JavaScript", level: 85, category: "Programming Languages" },
+  { name: "Python", level: 95, category: "Programming Languages" },
+  { name: "C", level: 90, category: "Programming Languages" },
+  { name: "ARMv8", level: 80, category: "Programming Languages" },
+  { name: "HTML/CSS", level: 85, category: "Programming Languages" },
 
-  // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
-
-  // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  // Tools & Technologies
+  { name: "Git/GitHub", level: 95, category: "Tools & Technologies" },
+  { name: "Docker", level: 75, category: "Tools & Technologies" },
+  { name: "Postman", level: 85, category: "Tools & Technologies" },
+  { name: "JUnit", level: 95, category: "Tools & Technologies" },
+  { name: "React", level: 90, category: "Tools & Technologies" },
+  { name: "JavaFX", level: 80, category: "Tools & Technologies" },
+  { name: "Tailwind CSS", level: 90, category: "Tools & Technologies" },
+  { name: "Node.js", level: 85, category: "Tools & Technologies" },
+  { name: "Express", level: 80, category: "Tools & Technologies" },
+  { name: "MongoDB", level: 80, category: "Tools & Technologies" },
+  { name: "SQLite", level: 80, category: "Tools & Technologies" },
+  { name: "WebSocket", level: 65, category: "Tools & Technologies" },
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = ["Programming Languages", "Tools & Technologies"];
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
+    (skill) => skill.category === activeCategory
   );
+
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -45,10 +47,10 @@ export const SkillsSection = () => {
               key={key}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                "cosmic-button px-5 py-2 rounded-full transition-colors duration-300 hover:cursor-pointer",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-forefround hover:bd-secondary"
+                  : "bg-secondary/70 text-foreground"
               )}
             >
               {category}

@@ -22,7 +22,7 @@ export const HeroSection = () => {
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
             I specialize in designing and developing software that balances performance and clarity.
-            What is my goal? It is to create technology that not only works—but works beautifully.
+            What is my goal? It is to create technology that not only works, but works beautifully.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
