@@ -6,23 +6,47 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isMessageSent, setIsMessageSent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    emailjs.sendForm(
+      'service_3osomt6',
+      'template_3bk2xrn', 
+      e.target,
+      '9R9JTCkHy3Y8XCGWN'
+    )
+    .then(() => {
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
+      e.target.reset();
+      setIsMessageSent(true);
+      
+      // Reset button text after 3 seconds
+      setTimeout(() => {
+        setIsMessageSent(false);
+      }, 3000);
+    })
+    .catch((error) => {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+      console.error('EmailJS error:', error);
+    })
+    .finally(() => {
       setIsSubmitting(false);
-    }, 1500);
+    });
   };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -75,11 +99,10 @@ export const ContactSection = () => {
 
           <div
             className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
           >
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -135,12 +158,12 @@ export const ContactSection = () => {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isMessageSent}
                 className={cn(
                   "cosmic-button w-full flex items-center justify-center gap-2 hover:cursor-pointer disabled:cursor-not-allowed"
                 )}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : isMessageSent ? "Message Sent!" : "Send Message"}
                 <Send size={16} />
               </button>
             </form>
