@@ -7,22 +7,28 @@ const skills = [
   { name: "JavaScript", level: 85, category: "Programming Languages" },
   { name: "Python", level: 95, category: "Programming Languages" },
   { name: "C", level: 90, category: "Programming Languages" },
+  { name: "C++", level: 80, category: "Programming Languages" },
   { name: "ARMv8", level: 80, category: "Programming Languages" },
   { name: "HTML/CSS", level: 85, category: "Programming Languages" },
+  { name: "Haskell", level: 80, category: "Programming Languages" },
+  { name: "Prolog", level: 75, category: "Programming Languages" },
 
   // Tools & Technologies
   { name: "Git/GitHub", level: 95, category: "Tools & Technologies" },
-  { name: "Docker", level: 75, category: "Tools & Technologies" },
+  { name: "Docker", level: 95, category: "Tools & Technologies" },
+  { name: "Kubernetes", level: 75, category: "Tools & Technologies" },
   { name: "Postman", level: 85, category: "Tools & Technologies" },
   { name: "JUnit", level: 95, category: "Tools & Technologies" },
-  { name: "React", level: 90, category: "Tools & Technologies" },
+  { name: "React.js", level: 90, category: "Tools & Technologies" },
   { name: "JavaFX", level: 80, category: "Tools & Technologies" },
   { name: "Tailwind CSS", level: 90, category: "Tools & Technologies" },
+  { name: "Flask", level: 90, category: "Tools & Technologies" },
   { name: "Node.js", level: 85, category: "Tools & Technologies" },
-  { name: "Express", level: 80, category: "Tools & Technologies" },
+  { name: "Express.js", level: 75, category: "Tools & Technologies" },
   { name: "MongoDB", level: 80, category: "Tools & Technologies" },
+  { name: "MySQL", level: 85, category: "Tools & Technologies" },
   { name: "SQLite", level: 80, category: "Tools & Technologies" },
-  { name: "WebSocket", level: 65, category: "Tools & Technologies" },
+  { name: "WebSocket.IO", level: 65, category: "Tools & Technologies" },
 ];
 
 const categories = ["Programming Languages", "Tools & Technologies"];
