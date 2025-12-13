@@ -66,7 +66,7 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">Engineering & Design</h4>
                   <p className="text-muted-foreground">
-                    Combining software and mechanical design principles to develop
+                    Combining software and team design principles to develop
                     reliable systems for real-world applications, including race car
                     components.
                   </p>
