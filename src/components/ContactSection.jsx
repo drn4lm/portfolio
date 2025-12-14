@@ -76,7 +76,7 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Email</h4>
                   <a
-                    href="darren.lam2@ucalgary.ca"
+                    href="mailto:darren.lam2@ucalgary.ca"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     darren.lam2@ucalgary.ca
