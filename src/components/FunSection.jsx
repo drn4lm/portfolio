@@ -78,9 +78,9 @@ export const FunSection = () => {
             </p>
 
             <ul className="list-disc list-inside text-muted-foreground space-y-1 text-left">
-              <li>Favorite anime: Demon Slayer</li>
-              <li>Top 3 song genres: Pop Rap, R&B, Throw Backs</li>
-              <li>Fun fact: I can name every F1 World Champion</li>
+              <li>Lifelong goal: To catch a shark big enough to make a good story</li>
+              <li>I recently discovered: I'm a demon on the pickleball court</li>
+              <li>Fun fact: I make a new playlist every week based on my mood</li>
             </ul>
 
             <p className="text-muted-foreground">
